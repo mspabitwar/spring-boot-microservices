@@ -36,7 +36,7 @@ public class MovieCatalogController {
 			/*Movie movie = webClientBuilder.build().get().uri("http://localhost:8082/movies/" + rating.getMovieId())
 					.retrieve().bodyToMono(Movie.class).block();*/
 
-			return new CatalogItem(movie.getName(), "Description", rating.getRating());
+			return new CatalogItem(movie.getName(), movie.getDescription(), rating.getRating());
 		}).collect(Collectors.toList());
 	}
 }
