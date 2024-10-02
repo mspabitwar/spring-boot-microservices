@@ -6,3 +6,6 @@ https://www.youtube.com/playlist?list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas
 
 Spring Boot Microservices Level 2: Fault Tolerance and Resilience
 https://www.youtube.com/playlist?list=PLqq-6Pq4lTTbXZY_elyGv7IkKrfkSrX5e
+
+Spring Boot Microservices Level 3: Microservice configuration
+https://www.youtube.com/playlist?list=PLqq-6Pq4lTTaoaVoQVfRJPqvNTCjcTvJB
