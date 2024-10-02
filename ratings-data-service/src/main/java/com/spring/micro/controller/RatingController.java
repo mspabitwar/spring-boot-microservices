@@ -6,12 +6,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.micro.model.Rating;
 
+import io.javabrains.ratingsdataservice.model.UserRating;
+
 @RestController
 @RequestMapping("/ratingsdata")
 public class RatingController {
 
-	@RequestMapping("/{movieId}")
-	public Rating getRating(@PathVariable("movieId") String movieId) {
+	@RequestMapping("/movies/{movieId}")
+	public Rating getMovieRating(@PathVariable("movieId") String movieId) {
 		return new Rating(movieId, 4);
+	}
+
+	@RequestMapping("/users/{userId}")
+	public UserRating getUserRatings(@PathVariable("userId") String userId) {
+		UserRating userRating = new UserRating();
+		userRating.initData(userId);
+		return userRating;
 	}
 }

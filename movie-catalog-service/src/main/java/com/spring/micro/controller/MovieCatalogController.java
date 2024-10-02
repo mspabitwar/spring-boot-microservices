@@ -1,6 +1,5 @@
 package com.spring.micro.controller;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.spring.micro.model.CatalogItem;
 import com.spring.micro.model.Movie;
-import com.spring.micro.model.Rating;
+import com.spring.micro.model.UserRating;
 
 @RestController
 @RequestMapping("/catalog")
@@ -28,8 +27,9 @@ public class MovieCatalogController {
 	@RequestMapping("/{userId}")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
 
-		List<Rating> ratingsList = Arrays.asList(new Rating("1234", 4), new Rating("5678", 3));
-		return ratingsList.stream().map(rating -> {
+		UserRating userRating = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + userId, UserRating.class);
+		
+		return userRating.getRatings().stream().map(rating -> {
 			Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rating.getMovieId(), Movie.class);
 
 			// Alternate way to call rest using webclient
