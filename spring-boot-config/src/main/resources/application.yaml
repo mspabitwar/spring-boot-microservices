@@ -1,0 +1,19 @@
+spring.application.name: spring-boot-config
+
+my:
+  #greeting: Hello
+  list:
+    value: one,two,three
+  map:
+    value: "{key1:'value1',key2: 'value2'}"
+
+app:
+  name: My App
+  description: Welcome to ${app.name}
+
+db:
+  connection: connectionString
+  username: user
+  password: pwd
+
+management.endpoints.web.exposure.include: "*"
