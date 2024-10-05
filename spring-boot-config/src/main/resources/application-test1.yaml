@@ -12,13 +12,8 @@ app:
   description: Welcome to ${app.name}
 
 db:
-  connection: connectionString
-  username: user
-  password: pwd
+  connection: connectionStringtest1
+  username: usertest1
+  password: pwdtest1
 
 management.endpoints.web.exposure.include: "*"
-
-spring:
-  profiles:
-    active:
-    - test2
