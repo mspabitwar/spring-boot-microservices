@@ -3,6 +3,7 @@ package com.spring.config;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,12 +22,15 @@ public class GreetingController {
 
 	@Value("#{${my.map.value}}")
 	private Map<String, String> mapValues;
+	
+	@Autowired
+	private DbConfig dbConfig;
 
 	@GetMapping("greeting")
 	public String greeting() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(greetingMessage).append("@").append(appDescription).append("@").append(listValues).append("@")
-				.append(mapValues);
+				.append(mapValues).append("@").append(dbConfig);
 		return sb.toString();
 	}
 }
