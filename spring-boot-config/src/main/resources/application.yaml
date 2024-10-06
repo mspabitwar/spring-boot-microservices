@@ -18,7 +18,10 @@ db:
 
 management.endpoints.web.exposure.include: "*"
 
-spring:
-  profiles:
-    active:
-    - test2
+#spring:
+#  profiles:
+#    active:
+#    - test2
+    
+spring.cloud.config.uri: http://localhost:8888
+spring.config.import: 'configserver:'
