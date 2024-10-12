@@ -35,7 +35,13 @@ db:
   connection: connectionStringFromConfigServer
   username: user
   password: pwd
-  
+
+$ vi spring-boot-config.yaml
+$ paste below content to it and save
+
+my:
+  greeting: Hello from microservice specific configuration file.
+
 $ git init
 $ git add .
 $ git commit -m "config yaml file added"
